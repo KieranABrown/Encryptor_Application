@@ -7,10 +7,22 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.BadPaddingException;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
 public class dataEncryptionCipher extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_encryption_cipher);
     }
@@ -40,8 +52,43 @@ public class dataEncryptionCipher extends AppCompatActivity {
         startActivity(i);
     }
 
-    static String DES(String txtData){
-        return new String(txtData);
+
+    public String DES(String txtData) {
+       String newTxtData = "";
+        try {
+            KeyGenerator keygenerator = KeyGenerator.getInstance("DES");
+            SecretKey myDesKey = keygenerator.generateKey();
+
+            Cipher desCipher;
+
+            // Create the cipher
+            desCipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
+
+            // Initialize the cipher for encryption
+            desCipher.init(Cipher.ENCRYPT_MODE, myDesKey);
+
+            //sensitive information
+            byte[] text = txtData.getBytes();
+            // Encrypt the text
+            byte[] textEncrypted = desCipher.doFinal(text);
+
+            newTxtData = new String(textEncrypted, "UTF-8");
+
+        }catch(NoSuchAlgorithmException e){
+            e.printStackTrace();
+        }catch(NoSuchPaddingException e){
+            e.printStackTrace();
+        }catch(InvalidKeyException e){
+            e.printStackTrace();
+        }catch(IllegalBlockSizeException e){
+            e.printStackTrace();
+        }catch(BadPaddingException e){
+            e.printStackTrace();
+        }catch(UnsupportedEncodingException e){
+            e.printStackTrace();
+        }
+
+        return new String(newTxtData);
     }
 }
 

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void DESDecrypt(View view) {
-        Intent i = new Intent(this, CaesarDecrypt.class);
+        Intent i = new Intent(this, dataEncryptionCipher.class);
         startActivity(i);
     }
 }
