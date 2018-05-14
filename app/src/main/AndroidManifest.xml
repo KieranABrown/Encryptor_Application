@@ -9,18 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Encrypted" />
-        <activity android:name=".CaesarEncrypt" />
-        <activity android:name=".CaesarDecrypt" />
-        <activity android:name=".Decrypted" />
-        <activity android:name=".dataEncryptionCipher"></activity>
+        <activity android:name=".Encrypted" android:screenOrientation="portrait"/>
+        <activity android:name=".CaesarEncrypt" android:screenOrientation="portrait"/>
+        <activity android:name=".CaesarDecrypt" android:screenOrientation="portrait"/>
+        <activity android:name=".Decrypted" android:screenOrientation="portrait"/>
+        <activity android:name=".dataEncryptionCipher" android:screenOrientation="portrait"/>
+        <activity android:name=".dESDecrypt" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -65,6 +65,15 @@
         android:layout_alignStart="@+id/caesarEncrypt"
         android:layout_below="@+id/dES"
         android:layout_marginTop="28dp"
-        android:onClick="DESDecrypt"
+        android:onClick="DESEncrypt"
         android:text="Encrypt" />
+
+    <Button
+        android:id="@+id/dESDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/caesarDecrypt"
+        android:layout_alignTop="@+id/dESEncrypt"
+        android:onClick="DESDecrypt"
+        android:text="Decrypt" />
 </RelativeLayout>

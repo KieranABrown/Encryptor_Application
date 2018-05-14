@@ -23,8 +23,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void DESDecrypt(View view) {
+    public void DESEncrypt(View view) {
         Intent i = new Intent(this, dataEncryptionCipher.class);
+        startActivity(i);
+    }
+
+    public void DESDecrypt(View view) {
+        Intent i = new Intent(this, dESDecrypt.class);
         startActivity(i);
     }
 }

@@ -3,6 +3,7 @@ package com.example.kiera.encryptor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -70,9 +71,7 @@ public class dataEncryptionCipher extends AppCompatActivity {
             //sensitive information
             byte[] text = txtData.getBytes();
             // Encrypt the text
-            byte[] textEncrypted = desCipher.doFinal(text);
-
-            newTxtData = new String(textEncrypted, "UTF-8");
+            newTxtData = Base64.encodeToString(desCipher.doFinal(text),Base64.DEFAULT);
 
         }catch(NoSuchAlgorithmException e){
             e.printStackTrace();
@@ -84,11 +83,9 @@ public class dataEncryptionCipher extends AppCompatActivity {
             e.printStackTrace();
         }catch(BadPaddingException e){
             e.printStackTrace();
-        }catch(UnsupportedEncodingException e){
-            e.printStackTrace();
         }
 
-        return new String(newTxtData);
+        return newTxtData;
     }
 }
 
