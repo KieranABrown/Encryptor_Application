@@ -43,7 +43,8 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="Caesar Cipher"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/dES"
