@@ -12,6 +12,17 @@
     tools:layout_editor_absoluteY="81dp">
 
     <Button
+        android:id="@+id/AESEncrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_alignStart="@+id/dESEncrypt"
+        android:layout_marginBottom="165dp"
+        android:onClick="AESEncrypt"
+        android:text="Encrypt" />
+
+    <Button
         android:id="@+id/caesarEncrypt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,6 +65,18 @@
         android:layout_marginTop="45dp"
         android:text="Data Encryption Standard"
         android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/aES"
+        android:layout_width="347dp"
+        android:layout_height="86dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="235dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Advanced Encryption Standard"
         android:textSize="24sp"
         android:textStyle="bold" />
 
