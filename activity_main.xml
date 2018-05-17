@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/AESEncrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_alignStart="@+id/dESEncrypt"
+        android:layout_marginBottom="165dp"
+        android:onClick="AESEncrypt"
+        android:text="Encrypt" />
+
+    <Button
+        android:id="@+id/caesarEncrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="109dp"
+        android:onClick="CaesarEncrypt"
+        android:text="Encrypt" />
+
+    <Button
+        android:id="@+id/caesarDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/caesarEncrypt"
+        android:layout_marginEnd="81dp"
+        android:onClick="CaesarDecrypt"
+        android:text="Decrypt" />
+
+    <TextView
+        android:id="@+id/caesarCipher"
+        android:layout_width="382dp"
+        android:layout_height="52dp"
+        android:layout_above="@+id/caesarDecrypt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Caesar Cipher"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/dES"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_below="@+id/caesarEncrypt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:text="Data Encryption Standard"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/aES"
+        android:layout_width="347dp"
+        android:layout_height="86dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="235dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Advanced Encryption Standard"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/dESEncrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/caesarEncrypt"
+        android:layout_alignStart="@+id/caesarEncrypt"
+        android:layout_below="@+id/dES"
+        android:layout_marginTop="28dp"
+        android:onClick="DESEncrypt"
+        android:text="Encrypt" />
+
+    <Button
+        android:id="@+id/dESDecrypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/caesarDecrypt"
+        android:layout_alignTop="@+id/dESEncrypt"
+        android:onClick="DESDecrypt"
+        android:text="Decrypt" />
+</RelativeLayout>
