@@ -32,5 +32,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, dESDecrypt.class);
         startActivity(i);
     }
+
+    public void AESEncrypt(View view) {
+        Intent i = new Intent(this, AESEncryption.class);
+        startActivity(i);
+    }
 }
 
